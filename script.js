@@ -17,7 +17,7 @@ var questionContainerEl = document.getElementById("question-container");
 
 var shuffledQuestions, currentQuestionIndex;
 var questionEl = document.getElementById("question");
-var answerButtonEl = document.getElementById("answer-buttons");
+var answerButtonsEl = document.getElementById("answer-buttons");
 
 
 
@@ -34,6 +34,7 @@ function startGame () {
 };
 
 function setNextQuestion () {
+    resetState();
     showQuestion(shuffledQuestions[currentQuestionIndex]);
 };
 
@@ -47,8 +48,16 @@ function showQuestion(question) {
             button.dataset.correct = answer.correct;
         }
         button.addEventListener("click" , selectAnswer);
-        answerButtonEl.appendChild(button);
+        answerButtonsEl.appendChild(button);
     });
+};
+
+function resetState() {
+    nextButton.classList.add("hide");
+    while (answerButtonsEl.firstChild) {
+        answerButtonsEl.removeChild
+        (answerButtonsEl.firstChild);
+    };
 };
 
 function selectAnswer (e) {
