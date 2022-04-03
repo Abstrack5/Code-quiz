@@ -1,21 +1,35 @@
 const questions = [
     {
         question: "The condition in an if / else statement is enclosed within ____.",
-        a: "Quotes",
-        b: "Curly Brackets",
-        c: "Parentheses",
-        d: "Square Brackets",
-        correctAnswer: "Parentheses",
-        
+        a: "quotes",
+        b: "curlyBrackets",
+        c: "parentheses",
+        d: "squareBrackets",
+        correctAnswer: "parentheses",
     },
     {
-        question: "Question 2",
-        a: "Quotes",
-        b: "Curly Brackets",
-        c: "Parentheses",
-        d: "Square Brackets",
-        correctAnswer: "Parentheses",
-        
+        question: "Inside which HTML element do we put the JavaScript?",
+        a: "<js>",
+        b: "<javaScript>",
+        c: "<scripting>",
+        d: "<script>",
+        correctAnswer: "<script>",
+    },
+    {
+        question: "The first index of an array is ____.",
+        a: "iLoveJavascript",
+        b: '"1"',
+        c: "pineApple",
+        d: '"0"',
+        correctAnswer: '"0"',
+    },
+    {
+        question: "How do you add a comment in a JavaScript?",
+        a: "<!-- commentThis -->",
+        b: "/* commentThis */",
+        c: "//commentThis",
+        d: "'commentThis",
+        correctAnswer: "//commentThis",
     },
 ];
 
@@ -32,7 +46,8 @@ var answerTwo = document.getElementById("answerButton2");
 var answerThree = document.getElementById("answerButton3");
 var answerFour = document.getElementById("answerButton4");
 
-var questionCount = 0;
+var shuffledQuestions = questions.sort(() => Math.random() - .5);
+var questionCountIndex = 0;
 var score = 0;
 var timeLeft = 200;
 
@@ -47,35 +62,44 @@ for (var i = 0; i < answerEl.length; i++ ) {
 function startGame() {
     startButton.classList.add("hide");
     questionContainerEl.classList.remove("hide");
-    nextButton.classList.remove("hide");
+    // nextButton.classList.remove("hide");
 
     showQuestion();
 };
 
 
 function showQuestion() {
-    questionEl.textContent = questions[questionCount].question;
-    answerOne.textContent = questions[questionCount].a;
-    answerTwo.textContent = questions[questionCount].b;
-    answerThree.textContent = questions[questionCount].c;
-    answerFour.textContent = questions[questionCount].d;
+    questionEl.textContent = shuffledQuestions[questionCountIndex].question;
+    answerOne.textContent = shuffledQuestions[questionCountIndex].a;
+    answerTwo.textContent = shuffledQuestions[questionCountIndex].b;
+    answerThree.textContent = shuffledQuestions[questionCountIndex].c;
+    answerFour.textContent = shuffledQuestions[questionCountIndex].d;
 
-
+    nextButton.classList.add("hide");
 };
 
 
 function checkAnswer(event) {
-    if (event.target.textContent === questions[questionCount].correctAnswer) {
+    if (event.target.textContent === shuffledQuestions[questionCountIndex].correctAnswer) {
          score += 5;
-        console.log("correctAnswer");
+        nextButton.classList.remove("hide");
+        console.log("correct!");
+        // add another question
+         if (questionCountIndex <= shuffledQuestions.length) {
+            questionCountIndex++;
+            console.log("nextQuestion!");
+        }
+            // ends quiz after last question
+            if (questionCountIndex > shuffledQuestions.length - 1) {
+            console.log("GameOver");
+            };  
+
      }else {
          timeLeft -= 5;
-         console.log("Incorrect")
-     };
-    if (questionCount < questions.length) {
-        questionCount++;
-        console.log("anotherQUestion");
-    }
+        //  nextButton.classList.remove("hide");
+        console.log("Incorrect!");
+        };
+    
 };
 
 
@@ -85,7 +109,9 @@ function checkAnswer(event) {
 
 
 
-// add correct or incorrect message when answering questions
+// add correct or incorrect message? 
+// choice box change to red for incorrect, green for correct?
 
-// Timer
-// highscore
+
+// Timer, setinterval, stop timer after last question
+// highscore/localstorage
