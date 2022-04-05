@@ -92,6 +92,7 @@ function checkAnswer(event) {
             // ends quiz after last question
             if (questionCountIndex > shuffledQuestions.length - 1) {
             console.log("GameOver");
+            // gameOver()
             };  
 
      }else {
@@ -112,6 +113,17 @@ function checkAnswer(event) {
 // add correct or incorrect message? 
 // choice box change to red for incorrect, green for correct?
 
-
-// Timer, setinterval, stop timer after last question
+// add gameover function to shower restart or view highscores
+// Timer, setinterval, stop timer after last question, add timer clock
 // highscore/localstorage
+
+
+// if (correct) {
+//     Element.classlist.add('correct')
+// } else {
+//     Element.classlist.add('wrong')
+
+// }
+
+// Element.classlist.remove('wrong')
+// Element.classlist.remove('wrong')
