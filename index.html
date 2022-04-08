@@ -4,11 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="./style.css">
     <script defer src="./script.js"></script>
     <title>Code Quiz!</title>
 </head>
 <body>
+<!-- view highscore link and timer, time is up/quiz over-->
+    <div class="row">
+        <div class="col text-left">
+            <a href="#" id="viewHighScore">View High Scores</a>
+        </div>
+        <div id="timer" class="text-right">
+            <h2>Time-Left: <span id="timeLeft">200</span></h2>
+        </div>
+        <div id="timesUp" class="hide">
+            Time's Up!
+        </div>
+    </div>
+    <div class="col text-center justify-content-center">
+        <h1 class="font-weight-bold mt-5">Welcome to Coding Quiz!</h1>
+        <p class="pl-5 pr-5">
+            Let's test your knowledge on Javascript fundamentals! Try to answer the following code related questions within the time limit. Keep in mind that incorrect answers will penalize your time by five seconds!
+        </p>
+    </div>
+<!-- container holding quiz content, start btn, next btn, questions, answer choices -->
     <div class="container">
         <div id="question-container" class="hide">
             <div id="question">Question</div>
@@ -19,10 +39,16 @@
                 <button class="btn ans-btn" id="answerButton4">Answer 4</button>
             </div>
         </div>
+        <!-- btn to start quiz, next btn to cycle questions, restart quiz -->
         <div class="controls">
             <button id="start-btn" class="start-btn btn">Start</button>
             <button id="next-btn" class="next-btn btn hide">Next</button>
+            <button id="restart-btn" class="restart-btn btn hide">Restart Quiz</button>
         </div>
+    </div>
+    <!-- score area under main container -->
+    <div class="row">
+        <h3 class="col text-center hide">Score:</h3>
     </div>
     
 </body>
