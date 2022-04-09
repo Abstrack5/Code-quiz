@@ -3,6 +3,7 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+
 /* :root {
 
 } */
@@ -25,14 +26,14 @@ body {
     box-shadow: 0 0 10px 2px;
 }
 
-.btn-grid {
+.button-grid {
     display: grid;
     grid-template-columns: repeat(2, auto);
     gap: 10px;
     margin: 20px 0;
 }
 
-.btn {
+.button {
     background-color: whitesmoke;
     color: #222;
     border: 1px solid black;
@@ -40,7 +41,7 @@ body {
     padding: 5px 10px;
 }
 
-.btn:hover {
+.button:hover {
     background-color: rgb(199, 229, 255);
 }
 

@@ -34,6 +34,14 @@ const questions = [
 ];
 
 
+var welcomeHeader = document.getElementById("welcomeHeader");
+var welcomeText = document.getElementById("welcomeText");
+
+var viewHighScore = document.getElementById("viewHighScore");
+var playerScore = document.getElementById("userScore");
+
+var timer = document.getElementById("timer");
+
 var startButton = document.getElementById("start-btn");
 var nextButton = document.getElementById("next-btn");
 
@@ -61,6 +69,10 @@ for (var i = 0; i < answerEl.length; i++ ) {
 
 function startGame() {
     startButton.classList.add("hide");
+    welcomeHeader.classList.add("hide");
+    welcomeText.classList.add("hide");
+    timer.classList.remove("hide");
+    playerScore.classList.remove("hide");
     questionContainerEl.classList.remove("hide");
     // nextButton.classList.remove("hide");
 
