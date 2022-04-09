@@ -33,7 +33,6 @@ const questions = [
     },
 ];
 
-
 var welcomeHeader = document.getElementById("welcomeHeader");
 var welcomeText = document.getElementById("welcomeText");
 
@@ -76,8 +75,8 @@ var userScorePoints = 0;
 var totalTime = 81;
 var scoreResult;
 
+// starts quiz everytime, runs startgame
 startButton.addEventListener("click", startGame);
-restartButton.addEventListener("click", startGame);
 
 submitInitialBtn.addEventListener("click", function(event){ 
     storeHighScores(event);
@@ -85,6 +84,7 @@ submitInitialBtn.addEventListener("click", function(event){
 viewHighScore.addEventListener("click", function(event) { 
     showHighScores(event);
 });
+// goback button at highscore page, hides content to only see highscore
 goBackBtn.addEventListener("click", function() {
     startButton.classList.remove("hide");
     welcomeHeader.classList.remove("hide");
@@ -94,6 +94,7 @@ goBackBtn.addEventListener("click", function() {
     questionContainerEl.classList.add("hide");
     highScoreSection.classList.add("hide");
 });
+// clears the highscore list
 clearHighScoreBtn.addEventListener("click", function(){
     window.localStorage.removeItem("high scores");
     listOfHighScores.innerHTML = "High Scores Cleared!";
@@ -101,30 +102,13 @@ clearHighScoreBtn.addEventListener("click", function(){
     listOfHighScores.setAttribute("style", "font-family: 'Archivo', sans-serif; font-style: italic;")
 });
 
-
+// checks if answer click is correct or incorrect
 for (var i = 0; i < answerEl.length; i++ ) {
     answerEl[i].addEventListener("click", checkAnswer);
 }
 
 
-
-
-// function startTimer() {
-//     var startTimer = setInterval(function() {
-//         totalTime--;
-//         timeLeft.textContent = totalTime;
-//         if(totalTime <= 0) {
-//             clearInterval(startTimer);
-//             gameOver();
-//             if (questionCountIndex < questions.length - 1) {
-//                 timesUp.classList.add("hide");
-//                 gameOver();
-//             }
-//         };
-
-//     },1000);
-// }
-
+// starts timer, set time to 80 seconds, starts question shuffle over, end game if criteria is met
 function startGame() {
     startButton.classList.add("hide");
     welcomeHeader.classList.add("hide");
@@ -167,7 +151,7 @@ function showQuestion() {
     answerFour.textContent = shuffledQuestions[questionCountIndex].d;
 };
 
-
+// adds points if correct and states correct, lose time and states incorrect
 function checkAnswer(event) {
     if (event.target.textContent === shuffledQuestions[questionCountIndex].correctAnswer) {
         userScorePoints += 5;
@@ -194,7 +178,7 @@ function checkAnswer(event) {
 
 }
 
-
+// activates when timer or questions run out
 function gameOver() {
     container.classList.add("hide");
     answerCheck.classList.add("hide");
@@ -281,5 +265,5 @@ function showHighScores() {
         var eachNewHighScore = document.createElement("p");
         eachNewHighScore.innerHTML = storedHighScores[i].initials + ": " + storedHighScores[i].score;
         listOfHighScores.appendChild(eachNewHighScore);
-    }
-}
+    };
+};
