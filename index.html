@@ -16,20 +16,20 @@
             <button type="button" class="ml-1 btn btn-warning">View High Scores</button>
         </div>
         <div class="text-right mr-4">
-            <h4 class="rounded bg-danger p-1 hide" id="timer">Timer: <span class="pr-2" id="timeLeft">200</span></h4>
+            <h4 class="rounded bg-danger p-1 hide" id="timer">Time Left: <span class="pr-2" id="timeLeft">120</span></h4>
         </div>
     </div>
     <div class="m-2 text-center justify-content-center">
         <h1 class="font-weight-bold mt-5" id="welcomeHeader">Welcome to Coding Quiz!</h1>
-        <p class="pl-5 pr-5 py-3" id="welcomeText">
-            Let's test your knowledge on Javascript fundamentals! Try to answer the following code related questions within the time limit. Keep in mind that incorrect answers will penalize your time by five seconds!
+        <p class="pl-5 pr-5 py-3 text-left" id="welcomeText">
+            Let's test your knowledge on Javascript fundamentals! Try to answer the following code related questions within the time limit. <br> <em>Keep in mind that correct answers give you 5 points, while incorrect answers will penalize your time by five seconds!</em>
         </p>
         <div id="timesUp" class="h3 hide">
             Time's Up!
         </div>
     </div>
 <!-- container holding quiz content, start btn, next btn, questions, answer choices -->
-    <div class="container">
+    <div id="container" class="">
         <div id="question-container" class="hide">
             <div id="question">Question</div>
             <div id="answer-buttons" class="button-grid">
@@ -48,7 +48,7 @@
     </div>
     <!-- score area under main container -->
     <div class="row">
-        <h3 class="col text-center my-3 hide" id="userScore">Score:<span>0</span></h3>
+        <h3 class="col text-center my-3 hide" id="userScore">Your Score!<span id="userScorePoints"></span></h3>
     </div>
     
 </body>

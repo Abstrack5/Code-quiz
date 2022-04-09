@@ -18,10 +18,10 @@ const questions = [
     {
         question: "The first index of an array is ____.",
         a: "iLoveJavascript",
-        b: '"1"',
-        c: "pineApple",
-        d: '"0"',
-        correctAnswer: '"0"',
+        b: "1",
+        c: "0",
+        d: "pineApple",
+        correctAnswer: "0",
     },
     {
         question: "How do you add a comment in a JavaScript?",
@@ -39,12 +39,15 @@ var welcomeText = document.getElementById("welcomeText");
 
 var viewHighScore = document.getElementById("viewHighScore");
 var playerScore = document.getElementById("userScore");
+// var userScorePoints = document.getElementById("userScorePoints")
 
+var timeLeft = document.getElementById("timeLeft");
 var timer = document.getElementById("timer");
 
 var startButton = document.getElementById("start-btn");
 var nextButton = document.getElementById("next-btn");
 
+var container = document.getElementById("container");
 var questionContainerEl = document.getElementById("question-container");
 var questionEl = document.getElementById("question");
 
@@ -56,8 +59,8 @@ var answerFour = document.getElementById("answerButton4");
 
 var shuffledQuestions = questions.sort(() => Math.random() - .5);
 var questionCountIndex = 0;
-var score = 0;
-var timeLeft = 200;
+
+var userScorePoints = 0;
 
 
 startButton.addEventListener("click", startGame);
@@ -67,14 +70,29 @@ for (var i = 0; i < answerEl.length; i++ ) {
     answerEl[i].addEventListener("click", checkAnswer);
 }
 
+function startTimer() {
+    var totalTime = 120;
+
+    var startTimer = setInterval(function() {
+        totalTime--;
+        timeLeft.textContent = totalTime;
+        if(totalTime <= 0) {
+            clearInterval(startTimer);
+            
+        }
+    },1000);
+}
+
 function startGame() {
     startButton.classList.add("hide");
     welcomeHeader.classList.add("hide");
     welcomeText.classList.add("hide");
+    container.classList.add("container");
     timer.classList.remove("hide");
     playerScore.classList.remove("hide");
     questionContainerEl.classList.remove("hide");
     // nextButton.classList.remove("hide");
+    startTimer();
 
     showQuestion();
 };
@@ -93,7 +111,8 @@ function showQuestion() {
 
 function checkAnswer(event) {
     if (event.target.textContent === shuffledQuestions[questionCountIndex].correctAnswer) {
-         score += 5;
+        userScorePoints += 5;
+        playerScore.textContent = ("Score: " + userScorePoints);
         nextButton.classList.remove("hide");
         console.log("correct!");
         // add another question
