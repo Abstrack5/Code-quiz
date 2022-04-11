@@ -20,6 +20,11 @@ When all questions are answered or the timer reaches 0, game is over
 
 * The user then will have the option to click on "Go Back" to start quiz again, or "Clear High Scores" to clear saved scores
 
+## Preview
+![code-quiz-snap](https://user-images.githubusercontent.com/100798134/162691552-8b9dc30c-013b-44a5-8988-b8d83236352c.JPG)
+![code-quiz-highscore](https://user-images.githubusercontent.com/100798134/162691558-389ba062-34b9-4a9d-9498-14bfba4fefca.JPG)
+
+
 ## App Uses
 * HTML
 * CSS
