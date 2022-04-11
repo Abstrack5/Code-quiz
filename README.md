@@ -1,5 +1,5 @@
 ## Code-quiz
-# This is a timed coding quiz with multiple-choice questions.
+This is a timed coding quiz with multiple-choice questions.
 
 ## Instructions
 * Click "Start Quiz"
