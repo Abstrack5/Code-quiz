@@ -26,6 +26,6 @@ When all questions are answered or the timer reaches 0, game is over
 * JavaScript
 * Bootstrap
 
-## Website
+## Links
 Quiz URL: https://abstrack5.github.io/Code-quiz/ <br>
 GitHub: https://github.com/Abstrack5/Code-quiz
