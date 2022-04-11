@@ -19,3 +19,13 @@ When all questions are answered or the timer reaches 0, game is over
 * Then it will show a list of saved high scores
 
 * The user then will have the option to click on "Go Back" to start quiz again, or "Clear High Scores" to clear saved scores
+
+## App Uses
+* HTML
+* CSS
+* JavaScript
+* Bootstrap
+
+## Website
+# Quiz URL: https://abstrack5.github.io/Code-quiz/
+# GitHub: https://github.com/Abstrack5/Code-quiz
