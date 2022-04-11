@@ -25,7 +25,7 @@ When all questions are answered or the timer reaches 0, game is over
 ![code-quiz-highscore](https://user-images.githubusercontent.com/100798134/162691558-389ba062-34b9-4a9d-9498-14bfba4fefca.JPG)
 
 
-## App Uses
+## Usages
 * HTML
 * CSS
 * JavaScript
