@@ -1,5 +1,5 @@
 ## Code-quiz
-This is a timed coding quiz with multiple-choice questions.
+This is a timed coding quiz with multiple-choice questions, that tests your Javascript knowledge.
 
 ## Instructions
 * Click "Start Quiz"
